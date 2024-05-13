@@ -21,12 +21,17 @@ export default function MenuScreen() {
         height: "auto",
       }}
     >
-      {/* {products.map((product) => (
-        <ProductListItems key={product.id} product={product} />
-      ))} */}
       <FlatList
         data={products}
         renderItem={({ item }) => <ProductListItems product={item} />}
+        numColumns={2}
+        contentContainerStyle={{
+          gap: 10,
+          padding: 10,
+        }}
+        columnWrapperStyle={{
+          gap: 10,
+        }}
       ></FlatList>
     </View>
   );
