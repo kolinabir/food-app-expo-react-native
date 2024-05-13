@@ -1,4 +1,11 @@
-import { Image, Platform, StyleSheet, Text, View } from "react-native";
+import {
+  FlatList,
+  Image,
+  Platform,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 
 import products from "@/assets/data/products";
 import { ProductListItems } from "@/components/ProductListItems";
@@ -14,9 +21,13 @@ export default function MenuScreen() {
         height: "auto",
       }}
     >
-      {products.map((product) => (
+      {/* {products.map((product) => (
         <ProductListItems key={product.id} product={product} />
-      ))}
+      ))} */}
+      <FlatList
+        data={products}
+        renderItem={({ item }) => <ProductListItems product={item} />}
+      ></FlatList>
     </View>
   );
 }

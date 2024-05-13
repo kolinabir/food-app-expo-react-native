@@ -4,7 +4,14 @@ import { Image, StyleSheet, Text, View } from "react-native";
 export const ProductListItems = ({ product }: { product: Product }) => {
   return (
     <View style={styles.container}>
-      <Image source={{ uri: product.image }} style={styles.image} />
+      <Image
+        source={{
+          uri:
+            product.image ||
+            "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/peperoni.png",
+        }}
+        style={styles.image}
+      />
       <Text style={styles.title}>{product.name}</Text>
       <Text style={styles.price}>${product.price}</Text>
     </View>
