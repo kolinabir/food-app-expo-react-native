@@ -15,11 +15,12 @@ export default function TabLayout() {
         headerShown: false,
       }}
     >
-      <Tabs.Screen name="index" options={{ href: null }} />
+      <Tabs.Screen name="index" options={{ href: null, headerShown: false }} />
 
       <Tabs.Screen
         name="menu"
         options={{
+          headerShown: false,
           title: "menu",
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name="pizza" color={color} />
